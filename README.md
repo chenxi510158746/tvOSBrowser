@@ -2,29 +2,28 @@ tvOS Browser
 =============
 
 
-Navigateur web pour tvOS utilisant une API propriétaire (UIWebView).
-Il est nécessaire d'éditer les lignes suivantes dans le fichier Availability.h de XCode pour compiler correctement.
+使用专有API（UIWebView）的tvOS网页浏览器。 需要编辑XCode Availability.h文件中的以下行才能正确编译。
 
 ```
-Availability.h pour AppleTV est situé dans Xcode > Contents > Developer > Platforms > AppleTVOS.platform > Developer > SDKs > AppleTVOS.sdk > usr > include
-Availability.h pour le simulateur AppleTV est situé dans Xcode > Contents > Developer > Platforms > AppleTVSimulator.platform > Developer > SDKs > AppleTVSimulator.sdk > usr > include
+Availability.h 在AppleTV位于： Xcode > Contents > Developer > Platforms > AppleTVOS.platform > Developer > SDKs > AppleTVOS.sdk > usr > include
+Availability.h 在AppleTV模拟器位于： Xcode > Contents > Developer > Platforms > AppleTVSimulator.platform > Developer > SDKs > AppleTVSimulator.sdk > usr > include
 ```
-Remplacez les lignes :
+更换行 :
 ```
 #define __TVOS_UNAVAILABLE                    __OS_AVAILABILITY(tvos,unavailable)
 #define __TVOS_PROHIBITED                     __OS_AVAILABILITY(tvos,unavailable)
 ```
-Par les lignes :
+替换成 :
 ```
 #define __TVOS_UNAVAILABLE_NOTQUITE                    __OS_AVAILABILITY(tvos,unavailable)
 #define __TVOS_PROHIBITED_NOTQUITE                     __OS_AVAILABILITY(tvos,unavailable)
 ```
 
-Comment utiliser tvOSBrowser
+如何使用tvOSBrowser
 =============
 
-- Double cliquer au centre de la zone tactile de la télécommande pour passer du mode curseur au mode ascenseur.
-- Toucher la zone tactile pour cliquer en mode curseur.
-- Le bouton Menu permet de revenir à la page précédente.
-- Le bouton Lecture/Pause permet de saisir une URL, une recherche Google ou de recharger la page courante.
-- Un double clic sur le bouton Menu ou Lecture/Pause permet de faire apparaitre une menu comprenant les favoris, l'historique, les paramètres de la page d'accueil, le UserAgent, la purge du cache et des cookies.
+- 双击Apple TV遥控器触摸区域的中心，在光标和滚动模式之间切换；
+- 单击触摸区域以选择；
+- 单击菜单返回上一页；
+- 单击播放/暂停按钮可让您输入网址（无模糊匹配或自动搜索）；
+- 双击播放/暂停或菜单更多的选择。
